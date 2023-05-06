@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Chaning Page</title>
+</head>
+<style>
+    *{margin: 0;padding: 0;}
+    .container{
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn{
+        font-size: 30px;
+        padding: 10px;
+        cursor: pointer;
+        outline: 0;
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <div class="container">
+        <button class="btn" onclick="changeColor()">Change Color</button>
+    </div>
+</body>
+<script>
+    let i=0;
+    const color = ["red", "green", "yellow", "blue", "violet", "orange"];
+
+    function changeColor(){
+        document.querySelector(".container").style.backgroundColor = color[i];
+        document.querySelector("button").style.backgroundColor = color[i];
+        i++;
+        if(i>color.length-1){
+            i=0;
+        }
+    }
+</script>
+</html>
